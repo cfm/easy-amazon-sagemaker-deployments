@@ -473,7 +473,7 @@ class Deploy(object):
     #             time.sleep(1)
 
     def build_docker(self):
-        cmd = "chmod +x src/build-docker.sh  & sudo ./src/build-docker.sh {}"
+        cmd = "chmod +x src/build-docker.sh && ./src/build-docker.sh {}"
         p = subprocess.Popen(cmd.format(self.name), stdout=subprocess.PIPE, shell=True)
         self.dockeroutput = p.communicate()[0].decode()
         acct = (
