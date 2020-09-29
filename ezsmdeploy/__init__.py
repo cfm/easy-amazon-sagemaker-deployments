@@ -332,7 +332,7 @@ class Deploy(object):
                 name="model-" + self.name,
                 model_data_prefix="/".join(self.modelpath[0].split("/")[:-1]) + "/",
                 image=self.image,
-                role=sagemaker.get_execution_role(),
+                role=os.environ.get("SAGEMAKER_EXECUTION_ROLE_ARN") or sagemaker.get_execution_role(),
                 # sagemaker_session=self.session,
                 predictor_cls=sagemaker.predictor.RealTimePredictor,
             )
