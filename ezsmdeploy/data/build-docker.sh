@@ -1,3 +1,5 @@
+set +x
+
 # The name of our algorithm
 algorithm_name=ezsmdeploy-image-$1
 
