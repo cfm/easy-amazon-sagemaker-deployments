@@ -37,6 +37,6 @@ docker push ${fullname}
 echo "${fullname}"
 
 # Have to do this because pythons subprocess for calling this script does not wait for it to finish. Tried various args to Popen
-sudo touch done.txt
+touch done.txt
 
 echo "SUCCESS"
